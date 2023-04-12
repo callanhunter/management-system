@@ -13,3 +13,13 @@ const db = mysql.createConnection(
   },
   console.log(`Connected to the management_db database.`)
 );
+
+// adds the starting question prompt
+function initialChoices() {
+  inquirer.prompt({
+    name: "action",
+    type: "list",
+    message: "What would you like to do?",
+    choices: ["View all Employees", "Add Employee", "Update Employee Role"],
+  });
+}
